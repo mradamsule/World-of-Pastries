@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./component/Login";
+import Navbar from "./component/Header";
 import Home from "./component/Home";
 import About from "./component/About";
 import Services from "./component/Services";
@@ -10,14 +10,17 @@ import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const count = cart.length
+
   const addToCart = (item) => {
     setCart((prev) => [...prev, item]);
+    setCount(count + 1);
+    alert("Item succefully added");
   };
 
-  console.log(cart);
   return (
     <>
-      <Navbar />
+      <Navbar count={count} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +30,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route
           path="/cart"
-          element={<Cart cart={cart}  />}
+          element={<Cart cart={cart} setCart={setCart} />}
         />
       </Routes>
     </>

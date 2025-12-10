@@ -1,46 +1,114 @@
- import Small from '../assets/Small chops.jfif'
- import Samosa from '../assets/samosa.jfif'
- import Chicken from '../assets/Chicken.jfif'
- import Fried from '../assets/fried.jfif'
- import Cake from '../assets/cakes.jfif'
- import Milky from '../assets/Milky.jfif'
- export default function Contact() {
+import Small from "../assets/Small chops.jfif";
+import Samosa from "../assets/samosa.jfif";
+import Chicken from "../assets/Chicken.jfif";
+import Fried from "../assets/fried.jfif";
+import Cake from "../assets/cakes.jfif";
+import Milky from "../assets/Milky.jfif";
+import ImageCard from "./imageCard";
+
+export default function Services() {
   return (
-     <div>
-<h1 className="mt-30 font-bold text-5xl text-center">Our services</h1>
+    <div className="bg-gray-50 pb-10 pt-10">
 
-  <div  className=" grid grid-cols-2 text-center gap-10 m-3 ">
-    <ul className='bg-white p-3 rounded-xl shadow hover:shadow-lg transition text-center'>
-    <li>Event Catering</li>
-    <li>Food Content Creation</li>
-    <li>Pastry Classes</li>
-   </ul>
-   <ul className='bg-white p-3 rounded-xl shadow hover:shadow-lg transition text-center'>
-     <li>Small Chop</li>
-    <li>Grils</li>
-    <li>Moctail</li>
-    <li>Lunch Pack</li>
-   </ul>
-  </div>
-  {/* <ul className='grid grid-cols-3  text-center '>
-    <li className='w-50 h-50'><img src={Small} alt="" /></li>
-    <li className='w-50 h-50'></li>
-    <li className='w-35 h-30'><img src={Samosa} alt="" /></li>
-    <li className='w-50 h-50'><img src={Fried} alt="" /></li>
-    <li className='w-70 h-50'><img src={Cake} alt="" /></li>
-    {/* <li className='w-50 h-50'><img src={Milky} alt="" /></li> */}
-  
-<div className='grid md:grid-cols-3 grid-rows-3 items-center gap-3 py-5 px-3'>
+      {/* HERO HEADER */}
+      <div className="text-center py-16 bg-gradient-to-r from-orange-50 to-white">
+        <h1 className="font-bold text-4xl md:text-5xl text-gray-900">
+          Our <span className="text-orange-600">Services</span>
+        </h1>
+        <p className="text-gray-600 mt-4 text-lg max-w-xl mx-auto">
+          We offer a delicious blend of catering, pastries, and creative food services tailored to your events, cravings, and lifestyle.
+        </p>
+      </div>
 
-<div className="bg-white p-3 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center"><img src={Small} alt="" /></div>
-<div className="bg-white p-3 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center"><img src={Chicken} alt="" /></div>
-<div className="bg-white p-3 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center"><img src={Samosa} alt="" className='w-50 h-55'/></div>
-<div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center"><img src={Fried} alt="" className='w-50 h-60'/></div>
-<div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center"><img src={Cake} alt="" className='w-55 h-60'/></div>
-<div className="bg-white p-3 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center "><  img src={Milky} alt=""  className='w-49 h-60 items-center'/></div>
+      {/* SERVICES LIST */}
+      <div className="max-w-6xl mx-auto px-4 mt-9">
+        <h2 className="text-3xl font-semibold text-center mb-10">
+          What We Offer
+        </h2>
 
+        <div className="grid md:grid-cols-2 gap-10">
 
-</div>
- </div>
-  )
+          {/* Left block */}
+          <div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-orange-600 mb-4 text-center">
+              Premium Culinary Services
+            </h3>
+            <ul className=" flex flex-col md:flex-row justify-between space-y-3 text-gray-700 text-lg text-center">
+              <li>✔ Event Catering</li>
+              <li>✔ Food Content Creation</li>
+              <li>✔ Pastry & Baking Classes</li>
+            </ul>
+            <p className="mt-4 text-gray-600 text-center">
+              Whether it's a wedding, corporate event, or private celebration — we handle everything with professionalism and flavor.
+            </p>
+          </div>
+
+          {/* Right block */}
+          <div className="bg-white p-8 rounded-xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-bold text-orange-600 mb-4 text-center">
+              Quick Bites & Special Orders
+            </h3>
+            <ul className="flex flex-col md:flex-row justify-between space-y-3 text-gray-700 text-lg text-center">
+              <li>✔ Small Chops</li>
+              <li>✔ Grills</li>
+              <li>✔ Mocktails</li>
+              <li>✔ Lunch Packs</li>
+            </ul>
+            <p className="mt-4 text-gray-600 text-center">
+              Perfect for office meetings, casual hangouts, parties, or on-the-go meals — freshly prepared and delivered fast.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* WHY CHOOSE US SECTION */}
+      <div className="max-w-6xl mx-auto mt-15 px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8">
+          Why Choose Us?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <WhyUsCard
+            title="High Quality Ingredients"
+            text="We use fresh, natural and premium ingredients to craft meals that are both healthy and delicious."
+          />
+          <WhyUsCard
+            title="Professional Preparation"
+            text="Every dish is carefully prepared by trained culinary professionals with years of experience."
+          />
+          <WhyUsCard
+            title="Fast & Reliable Delivery"
+            text="Enjoy timely delivery to your home, office, or event — without compromising taste or freshness."
+          />
+        </div>
+      </div>
+
+      {/* GALLERY SECTION */}
+      <div className="max-w-6xl mx-auto mt-15 px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8">
+          Some of Our Work
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <ImageCard src={Small} alt="Small chops" />
+          <ImageCard src={Chicken} alt="Chicken" />
+          <ImageCard src={Samosa} alt="Samosa" />
+          <ImageCard src={Fried} alt="Fried Rice" />
+          <ImageCard src={Cake} alt="Cake" />
+          <ImageCard src={Milky} alt="Milkydoughnut" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------ REUSABLE COMPONENT ------- */
+
+function WhyUsCard({ title, text }) {
+  return (
+    <div className="bg-white p-7 rounded-xl shadow hover:shadow-xl text-center transition">
+      <h3 className="font-semibold text-xl text-orange-600 mb-3">{title}</h3>
+      <p className="text-gray-700">{text}</p>
+    </div>
+  );
 }

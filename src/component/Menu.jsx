@@ -7,40 +7,63 @@ export default function Menu({ addToCart }) {
   const NairaSign = '₦';
 
   const menuItems = [
-    { name: "Samosa Pack", price: 3500, image: Samosa },
-    { name: "Chicken Wing Pack", price: 5000, image: Chicken },
-    { name: "Plain Doughnuts (Pack)", price: 1500, image: Doughnut },
-    { name: "Milk-Coated Doughnuts", price: 2000, image: Milky },
+    { name: "Samosa Pack", price: 3500, image: Samosa, desc: "Crispy, tasty, and perfectly spiced." },
+    { name: "Chicken Wing Pack", price: 5000, image: Chicken, desc: "Juicy grilled wings with bold flavor." },
+    { name: "Plain Doughnuts (Pack)", price: 1500, image: Doughnut, desc: "Soft, fluffy and freshly made." },
+    { name: "Milk-Coated Doughnuts", price: 2000, image: Milky, desc: "Sweet, creamy, and irresistible." },
   ];
 
   return (
-    <div className="mt-25">
-      <h1 className="font-bold text-3xl text-center mb-8">Savory Delights</h1>
+    <div className="mt-28 px-5 pb-20">
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mx-5">
+      {/* Heading */}
+      <h1 className="font-bold text-4xl text-center mb-12 text-gray-900">
+        Savory <span className="text-orange-600">Delights</span>
+      </h1>
+
+      {/* Grid */}
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {menuItems.map((item, index) => (
           <div 
             key={index}
-            className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition transform hover:scale-105 flex flex-col items-center"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
 
-            <p className="font-bold text-center mb-2">{item.name}</p>
+            {/* IMAGE WRAPPER */}
+            <div className="relative h-48 w-full overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
-            <p className="font-bold text-center mb-4">
-              <span>{NairaSign}</span>{item.price.toLocaleString()}
-            </p>
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
 
-            <button
-              className="bg-red-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-red-500 transition"
-              onClick={() => addToCart(item)}
-            >
-              Add to cart
-            </button>
+            <div className="p-5 text-center">
+
+              {/* Item Name */}
+              <p className="font-bold text-lg text-gray-800 mb-1">{item.name}</p>
+
+              {/* Description */}
+              <p className="text-gray-500 text-sm mb-3">{item.desc}</p>
+
+              {/* Price */}
+              <p className="font-bold text-orange-600 mb-5 text-xl">
+                {NairaSign}{item.price.toLocaleString()}
+              </p>
+
+              {/* Button */}
+              <button
+                className="w-full bg-orange-600 text-white py-2 rounded-lg font-semibold 
+                hover:bg-orange-500 transition-all shadow-sm hover:shadow-md"
+                onClick={() => addToCart(item)}
+              >
+                Add to Cart
+              </button>
+
+            </div>
           </div>
         ))}
       </div>

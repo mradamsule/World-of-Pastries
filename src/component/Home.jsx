@@ -1,34 +1,75 @@
-import lmagepast from '../assets/imagepast.jpeg'
+import ImagePast from "../assets/imagepast.jpeg";
+
 export default function Home() {
   return (
-    <div className='flex flex-col md:flex-row m-2 items-center mt-30'>
-    <img src={lmagepast} alt=""  className=' h-118  md:w-[50%]' />
-   
-     <div className="md:w-1/2 space-y-6 md:ml-15 ">
-      <h1 className='text-center font-bold text-3xl '>
-      Wellcome to world of Pastries!
-    </h1>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
-            Delicious Meals Delivered to Your Door
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Explore our menu and enjoy fresh, tasty food from the comfort of your home. Fast delivery, great flavors!
+    <section className="w-full bg-gradient-to-b from-orange-50 to-white pt-24 pb-16 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+
+        {/* Left Content */}
+        <div className="md:w-1/2 space-y-6">
+
+          <p className="text-orange-600 font-semibold tracking-wide">
+            Fresh • Tasty • Delivered
           </p>
-          <div className="flex gap-4">
+
+          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            Welcome to the World of <span className="text-orange-600">Pastries</span>!
+          </h1>
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+            Delicious Meals Delivered to Your Door
+          </h2>
+
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Explore our handcrafted pastries, freshly baked every day using the finest ingredients.
+            Experience mouth-watering flavors with fast and reliable delivery — right to your home.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-4 mt-6">
             <a
-              href="/Menu"
-              className="bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-500"
+              href="/menu"
+              className="bg-orange-600 text-white px-7 py-3 rounded-lg font-semibold text-lg 
+              shadow-md hover:bg-orange-500 hover:shadow-lg transition-all"
             >
               Order Now
             </a>
+
             <a
               href="/contact"
-              className="border border-red-600 text-red-600 px-6 py-3 rounded-lg font-medium hover:bg-red-100"
+              className="border-2 border-orange-600 text-orange-600 px-7 py-3 rounded-lg font-semibold text-lg 
+              hover:bg-orange-50 transition-all"
             >
               Contact Us
             </a>
           </div>
+
+          {/* Stats Section */}
+          <div className="flex gap-10 pt-8">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900">500+</h3>
+              <p className="text-gray-600">Happy Customers</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900">50+</h3>
+              <p className="text-gray-600">Fresh Pastries Daily</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900">4.9★</h3>
+              <p className="text-gray-600">Customer Rating</p>
+            </div>
+          </div>
         </div>
-    </div>
+
+        {/* Hero Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <img
+            src={ImagePast}
+            alt="Pastries"
+            className="rounded-2xl shadow-lg w-full md:w-[95%] object-cover"
+          />
+        </div>
+      </div>
+    </section>
   );
 }
