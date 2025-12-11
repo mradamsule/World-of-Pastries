@@ -142,11 +142,11 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <Testimonial
-            name="Sarah Johnson"
+            name="Rahma"
             text="The pastries are always fresh, beautifully crafted, and delivered warm! Definitely my go-to brand for treats and brunch orders."
           />
           <Testimonial
-            name="Michael Ade"
+            name="Khadija Ahmad"
             text="World of Pastries catered my event and the guests were blown away. Amazing presentation and delicious taste!"
           />
           <Testimonial

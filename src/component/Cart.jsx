@@ -5,7 +5,7 @@ export default function Cart({ cart, setCart }) {
   const NairaSign = "₦";
 
   // Ensure each item has a quantity
-  const updatedCart = cart.map(item => ({
+  const updatedCart = cart.map((item) => ({
     ...item,
     quantity: item.quantity || 1,
   }));
@@ -37,7 +37,10 @@ export default function Cart({ cart, setCart }) {
   };
 
   // Calculate totals
-  const subtotal = updatedCart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = updatedCart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   const shipping = subtotal > 0 ? 500 : 0;
   const total = subtotal + shipping;
 
@@ -64,7 +67,6 @@ export default function Cart({ cart, setCart }) {
         </div>
       ) : (
         <div className="flex flex-col md:flex-row gap-8">
-
           {/* LEFT SIDE: Cart Items */}
           <div className="md:w-2/3 max-h-[70vh] overflow-y-auto space-y-4 pr-2">
             {updatedCart.map((item, index) => (
@@ -82,13 +84,14 @@ export default function Cart({ cart, setCart }) {
                   <div>
                     <p className="font-semibold text-lg">{item.name}</p>
                     <p className="text-orange-600 font-bold">
-                      {NairaSign}{(item.price * item.quantity).toLocaleString()}
+                      {NairaSign}
+                      {(item.price * item.quantity).toLocaleString()}
                     </p>
                   </div>
                 </div>
 
                 {/* Quantity Controls */}
-                <div className="flex items-center ml-55 gap-2">
+                <div className="flex items-center md:ml-55 gap-2">
                   <button
                     onClick={() => decrement(index)}
                     className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
@@ -121,17 +124,26 @@ export default function Cart({ cart, setCart }) {
 
             <div className="flex justify-between text-gray-700">
               <span>Subtotal</span>
-              <span>{NairaSign}{subtotal.toLocaleString()}</span>
+              <span>
+                {NairaSign}
+                {subtotal.toLocaleString()}
+              </span>
             </div>
 
             <div className="flex justify-between text-gray-700">
               <span>Shipping</span>
-              <span>{NairaSign}{shipping.toLocaleString()}</span>
+              <span>
+                {NairaSign}
+                {shipping.toLocaleString()}
+              </span>
             </div>
 
             <div className="border-t border-gray-300 pt-4 flex justify-between font-bold text-xl">
               <span>Total</span>
-              <span className="text-green-600">{NairaSign}{total.toLocaleString()}</span>
+              <span className="text-green-600">
+                {NairaSign}
+                {total.toLocaleString()}
+              </span>
             </div>
 
             <button className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-500 transition shadow-md mt-4">
