@@ -4,41 +4,38 @@ import { Trash2 } from "lucide-react";
 export default function Cart({ cart, setCart }) {
   const NairaSign = "₦";
 
-  // Ensure each item has a quantity
   const updatedCart = cart.map((item) => ({
     ...item,
-    quantity: item.quantity || 1,
+    qty: item.qty || 1,
   }));
 
-  // Increment quantity
   const increment = (index) => {
     const newCart = [...updatedCart];
-    newCart[index].quantity += 1;
+    newCart[index].qty += 1;
     setCart(newCart);
   };
 
-  // Decrement quantity
   const decrement = (index) => {
     const newCart = [...updatedCart];
-    if (newCart[index].quantity > 1) {
-      newCart[index].quantity -= 1;
+    if (newCart[index].qty > 1) {
+      newCart[index].qty -= 1;
     } else {
-      // Remove if quantity reaches 0
+      
       newCart.splice(index, 1);
     }
     setCart(newCart);
   };
 
-  // Remove item
+
   const removeFromCart = (index) => {
     const newCart = [...updatedCart];
     newCart.splice(index, 1);
     setCart(newCart);
   };
 
-  // Calculate totals
+
   const subtotal = updatedCart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum, item) => sum + item.price * item.qty,
     0
   );
   const shipping = subtotal > 0 ? 500 : 0;
@@ -67,14 +64,14 @@ export default function Cart({ cart, setCart }) {
         </div>
       ) : (
         <div className="flex flex-col md:flex-row gap-8">
-          {/* LEFT SIDE: Cart Items */}
+          
           <div className="md:w-2/3 max-h-[70vh] overflow-y-auto space-y-4 pr-2">
             {updatedCart.map((item, index) => (
               <div
                 key={index}
                 className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition flex justify-between items-center gap-4"
               >
-                {/* Image & Info */}
+              
                 <div className="flex items-center gap-4">
                   <img
                     src={item.image}
@@ -85,12 +82,11 @@ export default function Cart({ cart, setCart }) {
                     <p className="font-semibold text-lg">{item.name}</p>
                     <p className="text-orange-600 font-bold">
                       {NairaSign}
-                      {(item.price * item.quantity).toLocaleString()}
+                      {(item.price * item.qty).toLocaleString()}
                     </p>
                   </div>
                 </div>
 
-                {/* Quantity Controls */}
                 <div className="flex items-center md:ml-55 gap-2">
                   <button
                     onClick={() => decrement(index)}
@@ -98,7 +94,7 @@ export default function Cart({ cart, setCart }) {
                   >
                     -
                   </button>
-                  <span className="font-semibold text-lg">{item.quantity}</span>
+                  <span className="font-semibold text-lg">{item.qty}</span>
                   <button
                     onClick={() => increment(index)}
                     className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
@@ -107,7 +103,6 @@ export default function Cart({ cart, setCart }) {
                   </button>
                 </div>
 
-                {/* Remove Button */}
                 <button
                   onClick={() => removeFromCart(index)}
                   className="text-red-600 hover:text-red-500 transition"
@@ -118,7 +113,7 @@ export default function Cart({ cart, setCart }) {
             ))}
           </div>
 
-          {/* RIGHT SIDE: Summary */}
+         
           <div className="md:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6 h-fit sticky top-32">
             <h2 className="text-2xl font-bold text-gray-800">Order Summary</h2>
 
@@ -146,9 +141,13 @@ export default function Cart({ cart, setCart }) {
               </span>
             </div>
 
-            <button className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-500 transition shadow-md mt-4">
-              Proceed to Checkout
-            </button>
+           <button
+  onClick={() => (window.location.href = "/checkout")}
+  className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-500 transition shadow-md mt-4"
+>
+  Proceed to Checkout
+</button>
+
           </div>
         </div>
       )}

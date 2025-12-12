@@ -21,7 +21,7 @@ export default function About() {
         viewport={{ once: true }}
         className="text-center text-gray-600 mt-4 text-lg max-w-2xl mx-auto"
       >
-        Crafting delicious, healthy, and beautifully presented meals since 2021
+        Crafting delicious, healthy, and beautifully presented meals since 2020
         — delivered with passion and excellence.
       </motion.p>
       <section className="flex flex-col md:flex-row items-center gap-10 mt-16">

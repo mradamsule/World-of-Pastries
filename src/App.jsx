@@ -6,16 +6,28 @@ import Services from "./component/Services";
 import Menu from "./component/Menu";
 import Cart from "./component/Cart";
 import Contact from "./component/Contact";
+import Checkout from "./component/Checkout";
 import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const count = cart.length
+
+  const count = cart.reduce((total, item) => total + item.qty, 0);
 
   const addToCart = (item) => {
-    setCart((prev) => [...prev, item]);
-    setCount(count + 1);
-    alert("Item succefully added");
+    setCart((prevCart) => {
+      const exists = prevCart.find((x) => x.name === item.name);
+
+      if (exists) {
+        return prevCart.map((x) =>
+          x.name === item.name ? { ...x, qty: x.qty + 1 } : x
+        );
+      }
+
+      return [...prevCart, { ...item, qty: 1 }];
+    });
+
+    alert(`${item.name} added to cart`);
   };
 
   return (
@@ -28,10 +40,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/menu" element={<Menu addToCart={addToCart} />} />
         <Route path="/contact" element={<Contact />} />
-        <Route
-          path="/cart"
-          element={<Cart cart={cart} setCart={setCart} />}
-        />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+
+        <Route path="/checkout" element={<Checkout cart={cart} />} />
       </Routes>
     </>
   );
