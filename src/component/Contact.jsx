@@ -63,7 +63,7 @@ export default function Contact() {
             <h2 className="text-2xl font-semibold mb-3">Quick Order</h2>
 
             <a
-              href="https://wa.me/2349121835407"
+              href="https://wa.me/09094017672"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-green-600 text-white py-4 rounded-xl text-xl font-semibold shadow-lg hover:bg-green-700 transition duration-200 flex items-center justify-center gap-2"

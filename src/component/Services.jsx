@@ -5,6 +5,7 @@ import Fried from "../assets/fried.jfif";
 import Cake from "../assets/cakes.jfif";
 import Milky from "../assets/Milky.jfif";
 import ImageCard from "./imageCard";
+import { motion } from "framer-motion";
 
 export default function Services() {
   return (
@@ -12,12 +13,22 @@ export default function Services() {
 
       {/* HERO HEADER */}
       <div className="text-center py-16 bg-gradient-to-r from-orange-50 to-white">
-        <h1 className="font-bold text-4xl md:text-5xl text-gray-900">
+          <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9 }}
+                viewport={{ once: true }}
+         className="font-bold text-4xl md:text-5xl text-gray-900">
           Our <span className="text-orange-600">Services</span>
-        </h1>
-        <p className="text-gray-600 mt-4 text-lg max-w-xl mx-auto">
+         </motion.h1>
+          <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.7 }}
+        viewport={{ once: true }}
+        className="text-gray-600 mt-4 text-lg max-w-xl mx-auto">
           We offer a delicious blend of catering, pastries, and creative food services tailored to your events, cravings, and lifestyle.
-        </p>
+        </motion.p>
       </div>
 
       {/* SERVICES LIST */}

@@ -1,3 +1,4 @@
+import TextType from "../animations/TextType";
 import ImagePast from "../assets/imagepast.jpeg";
 
 export default function Home() {
@@ -13,7 +14,15 @@ export default function Home() {
           </p>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Welcome to the World of <span className="text-orange-600">Pastries</span>!
+            Welcome to the World of {" "}
+            <TextType 
+              text={["Pastriest!", "Chops!"]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+            {/* <span className="text-orange-600">Pastries</span>! */}
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">

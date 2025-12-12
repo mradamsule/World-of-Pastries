@@ -4,6 +4,7 @@ import Milky from '../assets/Milky.jfif';
 import Doughnut from '../assets/Doughnut.jfif';
 
 export default function Menu({ addToCart }) {
+
   const NairaSign = '₦';
 
   const menuItems = [
