@@ -1,5 +1,5 @@
 import TextType from "../animations/TextType";
-import ImagePast from "../assets/imagepast.jpeg";
+import ImagePast from "../assets/Imagepast.jpeg";
 import { motion } from "framer-motion";
 
 export default function Home() {

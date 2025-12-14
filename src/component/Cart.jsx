@@ -1,7 +1,8 @@
-import { useState } from "react";
 import { Trash2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart({ cart, setCart }) {
+  const navigate = useNavigate();
   const NairaSign = "₦";
 
   const updatedCart = cart.map((item) => ({
@@ -20,12 +21,10 @@ export default function Cart({ cart, setCart }) {
     if (newCart[index].qty > 1) {
       newCart[index].qty -= 1;
     } else {
-      
       newCart.splice(index, 1);
     }
     setCart(newCart);
   };
-
 
   const removeFromCart = (index) => {
     const newCart = [...updatedCart];
@@ -33,12 +32,11 @@ export default function Cart({ cart, setCart }) {
     setCart(newCart);
   };
 
-
   const subtotal = updatedCart.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
   );
-  const shipping = subtotal > 0 ? 500 : 0;
+  const shipping = subtotal > 0 ? 1000 : 0;
   const total = subtotal + shipping;
 
   return (
@@ -48,7 +46,7 @@ export default function Cart({ cart, setCart }) {
       </h1>
 
       {updatedCart.length === 0 ? (
-        <div className="text-center text-gray-600 text-lg bg-white p-10 ">
+        <div className="text-center text-gray-600 text-lg bg-white p-10">
           <img
             src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png"
             alt="empty-cart"
@@ -64,14 +62,12 @@ export default function Cart({ cart, setCart }) {
         </div>
       ) : (
         <div className="flex flex-col md:flex-row gap-8">
-          
           <div className="md:w-2/3 max-h-[70vh] overflow-y-auto space-y-4 pr-2">
             {updatedCart.map((item, index) => (
               <div
                 key={index}
                 className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition flex justify-between items-center gap-4"
               >
-              
                 <div className="flex items-center gap-4">
                   <img
                     src={item.image}
@@ -87,7 +83,7 @@ export default function Cart({ cart, setCart }) {
                   </div>
                 </div>
 
-                <div className="flex items-center md:ml-55 gap-2">
+                <div className="flex items-center gap-2">
                   <button
                     onClick={() => decrement(index)}
                     className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
@@ -113,7 +109,6 @@ export default function Cart({ cart, setCart }) {
             ))}
           </div>
 
-         
           <div className="md:w-1/3 bg-white rounded-xl shadow-lg p-6 flex flex-col gap-6 h-fit sticky top-32">
             <h2 className="text-2xl font-bold text-gray-800">Order Summary</h2>
 
@@ -141,13 +136,12 @@ export default function Cart({ cart, setCart }) {
               </span>
             </div>
 
-           <button
-  onClick={() => (window.location.href = "/checkout")}
-  className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-500 transition shadow-md mt-4"
->
-  Proceed to Checkout
-</button>
-
+            <button
+              onClick={() => navigate("/checkout")}
+              className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-500 transition shadow-md mt-4"
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       )}
