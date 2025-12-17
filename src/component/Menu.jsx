@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Samosa from '../assets/samosa.jfif';
-import Chicken from '../assets/CHICKEN.jfif';
+import Chicken from '../assets/Chicken.jfif';
 import Milky from '../assets/Milky.jfif';
 import Doughnut from '../assets/Doughnut.jfif';
 
