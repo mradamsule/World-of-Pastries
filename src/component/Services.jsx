@@ -1,6 +1,6 @@
 import Small from "../assets/Small chops.jfif";
 import Samosa from "../assets/samosa.jfif";
-import Chicken from "../assets/Chicken.jfif";
+import Wings from "../assets/wings.jfif"
 import Fried from "../assets/fried.jfif";
 import Cake from "../assets/cakes.jfif";
 import Milky from "../assets/Milky.jfif";
@@ -177,7 +177,7 @@ export default function Services() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           <AnimatedImage><ImageCard src={Small} alt="Small chops" /></AnimatedImage>
-          <AnimatedImage><ImageCard src={Chicken} alt="Chicken" /></AnimatedImage>
+          <AnimatedImage><ImageCard src={Wings} alt="Chicken" /></AnimatedImage>
           <AnimatedImage><ImageCard src={Samosa} alt="Samosa" /></AnimatedImage>
           <AnimatedImage><ImageCard src={Fried} alt="Fried Rice" /></AnimatedImage>
           <AnimatedImage><ImageCard src={Cake} alt="Cake" /></AnimatedImage>
