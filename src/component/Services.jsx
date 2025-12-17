@@ -1,6 +1,6 @@
 import Small from "../assets/Small chops.jfif";
 import Samosa from "../assets/samosa.jfif";
-import Chicken from "../assets/CHICKEN.jfif";
+import Chicken from "../assets/Chicken.jfif";
 import Fried from "../assets/fried.jfif";
 import Cake from "../assets/cakes.jfif";
 import Milky from "../assets/Milky.jfif";
