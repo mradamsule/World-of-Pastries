@@ -19,7 +19,7 @@ export default function About() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-center text-gray-600 mt-4 text-lg max-w-2xl mx-auto"
+        className="text-center text-gray-600 mt-4 md:text-lg max-w-2xl mx-auto"
       >
         Crafting delicious, healthy, and beautifully presented meals since 2020
         — delivered with passion and excellence.
@@ -35,7 +35,7 @@ export default function About() {
         >
           <h2 className="text-3xl font-semibold text-gray-800">Our Story</h2>
 
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 md:text-lg leading-relaxed">
             At <strong>World of Pastries</strong>, we believe in the magic of
             great food. Our journey started in a cozy kitchen in 2020, fueled by
             a dream to bring fresh, delicious, and visually perfect meals right
@@ -95,7 +95,7 @@ export default function About() {
                   <h3 className="font-bold text-2xl text-orange-600 mb-3">
                     Our Mission
                   </h3>
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 md:text-lg">
                     To deliver mouth-watering meals and pastries made with
                     natural, healthy ingredients ensuring freshness, delight,
                     and exceptional customer satisfaction with every single
@@ -104,10 +104,10 @@ export default function About() {
                 </>
               ) : (
                 <>
-                  <h3 className="font-bold text-2xl text-orange-600 mb-3">
+                  <h3 className="font-bold md:text-2xl text-orange-600 mb-3">
                     Our Vision
                   </h3>
-                  <p className="text-gray-600 text-lg">
+                  <p className="text-gray-600 md:text-lg">
                     To become a leading brand known for quality, creativity, and
                     irresistible culinary experiences loved locally and
                     recognized globally for excellence.
