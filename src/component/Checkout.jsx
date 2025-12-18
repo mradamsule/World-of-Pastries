@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 export default function Checkout({ cart = [] }) {
   const [details, setDetails] = useState({
     name: "",

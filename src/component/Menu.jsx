@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import Samosa from '../assets/samosa.jfif';
-// import Wings from '../assets/Wings.jfif'
 import Milky from '../assets/Milky.jfif';
 import Doughnut from '../assets/Doughnut.jfif';
 
@@ -12,7 +11,6 @@ export default function Menu({ addToCart }) {
 
   const menuItems = [
     { name: "Samosa Pack", price: 3500, image: Samosa, desc: "Crispy, tasty, and perfectly spiced." },
-    // { name: "Chicken Wing Pack", price: 5000, image: Wings, desc: "Juicy grilled wings with bold flavor." },
     { name: "Plain Doughnuts (Pack)", price: 1500, image: Doughnut, desc: "Soft, fluffy and freshly made." },
     { name: "Milk-Coated Doughnuts", price: 2000, image: Milky, desc: "Sweet, creamy, and irresistible." },
   ];
