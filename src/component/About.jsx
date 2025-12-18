@@ -4,13 +4,13 @@ import Hero2 from "../assets/Hero2.jpeg";
 
 export default function About() {
   return (
-    <div className="min-h-screen py-20 max-w-6xl mx-auto">
+    <div className="min-h-screen py-20 md:max-w-6xl mx-auto">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold text-gray-900 text-center mt-10"
+        className="md:text-4xl md:text-5xl font-bold text-gray-900 text-center mt-10"
       >
         About <span className="text-orange-600">World of Pastries</span>
       </motion.h1>
@@ -42,13 +42,13 @@ export default function About() {
             to your doorstep.
           </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 md:text-lg leading-relaxed">
             What began as a small home project has grown into a trusted culinary
             brand, serving hundreds of satisfied customers who enjoy our
             pastries, meals, and freshly inspired creations daily.
           </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 md:text-lg leading-relaxed">
             Every dish reflects passion, creativity, and dedication all blended
             to create a unique culinary journey for our customers.
           </p>
@@ -124,7 +124,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-3xl font-semibold text-gray-800 text-center mb-10"
+          className="md:text-3xl font-semibold text-gray-800 text-center mb-10"
         >
           Business Insights
         </motion.h2>
@@ -171,18 +171,18 @@ export default function About() {
             {" "}
             The Chef Advantage{" "}
           </h2>{" "}
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 md:text-lg">
             {" "}
             Behind every dish is a skilled chef with a passion for creating
             visually stunning and delicious meals.{" "}
           </p>{" "}
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 md:text-lg">
             {" "}
             With experience as a Demonstration Chef and Food Content Creator,
             every recipe is carefully curated to meet professional standards
             ensuring every meal is not only tasty but also Instagram-worthy.{" "}
           </p>{" "}
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 md:text-lg">
             {" "}
             Whether catering events or teaching pastry classes, our chef brings
             modern techniques and artistic flair to every culinary creation.{" "}
@@ -211,7 +211,7 @@ export default function About() {
       {/* Testimonials Section */}{" "}
       <section className="mt-24 pb-10">
         {" "}
-        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-12">
+        <h2 className="md:text-3xl font-semibold text-gray-800 text-center mb-12">
           {" "}
           What Our Customers Say{" "}
         </h2>{" "}
